@@ -22,6 +22,11 @@ public class UserController {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
     }
 
+    @GetMapping
+    public ResponseEntity<?> allUsers() {
+        return new ResponseEntity<>(userService.findAllUsers(), HttpStatus.OK);
+    }
+
     @GetMapping("/{username}")
     public ResponseEntity<?> delete(@PathVariable String username) {
         Optional<?> maybeUser = userService.findByUsername(username);

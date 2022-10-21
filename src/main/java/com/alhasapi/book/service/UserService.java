@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -32,6 +33,10 @@ public class UserService implements  IUserService {
    @Override
    public Optional<User> findByUsername(String username) {
       return userRepository.findByUsername(username);
+   }
+
+   public List<User> findAllUsers() {
+      return userRepository.findAll();
    }
 
    @Transactional

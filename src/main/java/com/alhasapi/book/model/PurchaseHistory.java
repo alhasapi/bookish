@@ -9,8 +9,9 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "purchase_history")
+@Table(name = "purchase_history", schema = "sc_book")
 public class PurchaseHistory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,5 +27,4 @@ public class PurchaseHistory {
 
     @Column(name="purchase_time", nullable = false)
     private LocalDateTime purchaseTime;
-
 }

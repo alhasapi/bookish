@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "book")
+@Table(name = "book", schema = "sc_book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +27,4 @@ public class Book {
 
     @Column(name = "create_time", nullable = false)
     private LocalDateTime createTime;
-
 }
